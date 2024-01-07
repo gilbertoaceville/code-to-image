@@ -1,14 +1,15 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       backgroundColor: {
+        accent: "var(--color-secondary)",
         alpha: "var(--background-alpha)",
         primary: "var(--background-primary)",
         secondary: "var(--background-secondary)",
@@ -16,10 +17,13 @@ const config: Config = {
       },
       borderColor: {
         "b-primary": "var(--border-primary)",
-        "b-secondary": "var(--border-secondary)",
-      }
+        "b-secondary": "var(--color-secondary)",
+      },
+      colors: {
+        tertiary: "var(--color-tertiary)",
+      },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;

@@ -9,12 +9,13 @@
   --background-tertiary: #f8fafc;
 
   --border-primary: #f9f9f914;
-  --border-secondary: #3c3c3c;
 
   --shadow-primary: 0 3px 10px rgba(0, 0, 0, 0.2);
   --shadow-secondary: 2px 3px 10px rgba(0, 0, 0, 0.2);;
 
   --color-primary: #848484;
+  --color-secondary: #3c3c3c;
+  --color-tertiary: #ffffff;
 }
 
 body {
@@ -80,7 +81,7 @@ body {
   position: absolute;
 
   background-color: var(--background-secondary);
-  border: 1px solid var(--border-secondary);
+  border: 1px solid var(--color-secondary);
   border-radius: rem(3px);
 }
 
