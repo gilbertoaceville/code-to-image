@@ -1,6 +1,6 @@
 ## Code To Image Web Application
 
-### Architecture
+### Wireframe
 
 Setup was started by creating a wireframe which serves as an adumbration of the code editor, with this the placement of each feature is predetermined.
 
@@ -39,6 +39,66 @@ For ease of resizing the editor, the [re-resizable](https://www.npmjs.com/packag
       />
     </Resizable>
 ```
+
+The header component of the editor is nested with 3 similar but distinct components, All selector components excluding the `PaddingSelector` share the same Dropown setup.
+```bash
+  page.tsx
+```
+
+```bash
+      <header
+        className="flex"
+      >
+        <LanguageSelector />
+        <ThemeSelector />
+        <BackgroundSelector />
+        <PaddingSelector />
+      </header>
+```
+
+```bash
+  Dropdown.tsx
+```
+
+```bash
+  const Dropdown = forwardRef(function Dropdown(
+    { label, options, type, handleChange }: DropdownProps,
+    ref: ForwardedRef<HTMLDivElement> | RefObject<HTMLDivElement>
+  ) {
+    const { isOn, toggle, setOff } = useToggle();
+
+    useOnClickOutside(ref as RefObject<HTMLDivElement>, setOff);
+    return (
+      <div ref={ref as ForwardedRef<HTMLDivElement>} onClick={toggle}>
+        <p className="py-[5px] text-sm font-medium">Code Colors</p>
+        <div className="dropdown-title capitalize w-[120px] hover:text-slate-50 transition-all duration-300 ease-in-out">
+          {label} <ChevronDown />
+        </div>
+        {isOn && (
+          <div className="dropdown-menu relative top-[94px] w-[120px]">
+            {options.map((option, i) => {
+              const name =
+                type === EditorType.language
+                  ? (option as LanguageType).name
+                  : (option as string);
+              return (
+                <button
+                  key={i}
+                  onClick={() => handleChange?.(type, option)}
+                  className=" capitalize text-left hover:text-slate-50 transition-all duration-300 ease-in-out"
+                >
+                  {name}
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    );
+  });
+```
+## Assets
+[!Screenshot](/public/screenshot-1.png)
 
 ## Getting Started
 
