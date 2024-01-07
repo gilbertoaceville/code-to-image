@@ -4,13 +4,13 @@ import { ChevronDown } from "lucide-react";
 import { useRef } from "react";
 
 import { languages } from "@/base/config/config";
-import { useEditor } from "@/base/hooks/useEditor";
+import { EditorType, useEditor } from "@/base/hooks/useEditor";
 import useToggle from "@/base/hooks/useToggle";
 import { useOnClickOutside } from "@/base/hooks/useOnClickOutside";
 
 export default function LanguageSelector() {
   const { isOn, toggle, setOff } = useToggle();
-  const { language, handleLanguageChange } = useEditor();
+  const { language, handleChange } = useEditor();
 
   const langRef = useRef<HTMLDivElement>(null);
 
@@ -33,7 +33,7 @@ export default function LanguageSelector() {
               <div key={i}>
                 <button
                   className="text-left hover:text-slate-50 transition-all duration-300 ease-in-out"
-                  onClick={() => handleLanguageChange(lang)}
+                  onClick={() => handleChange(EditorType.language, lang)}
                 >
                   {lang.name}
                 </button>
