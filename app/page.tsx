@@ -1,5 +1,6 @@
 import CodeEditor from "@/components/CodeEditor";
 import LanguageSelector from "@/components/LangugeSelector";
+import ThemeSelector from "@/components/ThemeSelector";
 
 export default function Home() {
   return (
@@ -9,6 +10,8 @@ export default function Home() {
          z-10 bg-[#191919] rounded border border-[#3C3C3C] shadow-md"
       >
         <LanguageSelector />
+
+        <ThemeSelector />
       </header>
 
       <div className="editor">

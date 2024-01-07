@@ -1,13 +1,18 @@
 import { useState } from "react";
-import { languages } from "@/base/config/config";
+import { languages, themes } from "@/base/config/config";
 import { LanguageType } from "@/components/LangugeSelector/types";
 
 export function useEditor() {
   const [language, setLanguage] = useState<LanguageType>(languages[0]);
+  const [theme, setTheme] = useState<string>(themes[0]);
 
-  const handleLanguageChange = (newLanguage: LanguageType) => {
+  function handleLanguageChange(newLanguage: LanguageType) {
     setLanguage(newLanguage);
   };
 
-  return { language, handleLanguageChange };
+  function handleThemeChange(newTheme: string) {
+    setTheme(newTheme);
+  };
+
+  return { language, theme, handleLanguageChange, handleThemeChange };
 }
