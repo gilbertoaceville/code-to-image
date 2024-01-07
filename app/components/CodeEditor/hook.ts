@@ -4,7 +4,7 @@ import { ChangeEvent, SetStateAction, useEffect, useState } from "react";
 export function useCodeEditor() {
   const [resWidth, setResWidth] = useState(1000);
   const [resHeight, setResHeight] = useState<number | null>(500);
-  const [title, setTitle] = useState("Add-Untitled");
+  const [title, setTitle] = useState("Add-Title");
   const [codeValue, setCodeValue] = useState<string>(defaultCode);
 
   function handleCodeValueChange(newCode: string) {
@@ -12,7 +12,9 @@ export function useCodeEditor() {
   }
 
   function handleChangeTitle(e: ChangeEvent<HTMLInputElement>) {
-    setTitle(e.target.value);
+    // Pull out the title without the extension
+    const newTitle = e.target.value.split(".")[0];
+    setTitle(newTitle);
   }
 
   function handleResize(
@@ -36,5 +38,13 @@ export function useCodeEditor() {
     return window.removeEventListener("resize", updateWidthSize);
   }, []);
 
-  return { codeValue, resHeight, resWidth, title, handleCodeValueChange, handleResize, handleChangeTitle };
+  return {
+    codeValue,
+    resHeight,
+    resWidth,
+    title,
+    handleCodeValueChange,
+    handleResize,
+    handleChangeTitle,
+  };
 }
