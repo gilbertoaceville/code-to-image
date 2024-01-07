@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       backgroundColor: {
         accent: "var(--color-secondary)",
+        foreground: "var(--color-foreground)",
         alpha: "var(--background-alpha)",
         primary: "var(--background-primary)",
         secondary: "var(--background-secondary)",

@@ -16,52 +16,13 @@
   --color-primary: #848484;
   --color-secondary: #3c3c3c;
   --color-tertiary: #ffffff;
+  --color-foreground: #000000;
 }
 
 body {
   background-color: var(--background-primary);
   color: var(--color-primary);
 }
-
-// .code-title {
-//   border-top-left-radius: 0.5rem;
-//   border-top-right-radius: 0.5rem;
-//   border: 2px solid var(--border-primary);
-
-//   box-shadow: var(--shadow-primary);
-// }
-
-// .ace-editor-container {
-//   width: 100% !important;
-// }
-
-// .ace_scrollbar {
-//   display: none !important;
-// }
-
-// .ace_editor {
-//   background-color: var(--background-alpha);
-//   border-bottom-left-radius: 0.5rem;
-//   border-bottom-right-radius: 0.5rem;
-//   box-shadow: var(--shadow-secondary);
-
-//   border: 2px solid var(--border-primary);
-//   border-top: none;
-
-//   font-weight: 500 !important;
-//   font-size: 17px !important;
-//   line-height: 1.5rem !important;
-// }
-
-// .ace_content {
-//   width: 100% !important;
-//   top: 12px !important;
-//   left: 12px !important;
-// }
-
-// .ace_scroller {
-//   width: 100% !important;
-// }
 
 .dropdown-title {
   padding: 0.25rem 0.3rem 0.3rem 0.5rem;

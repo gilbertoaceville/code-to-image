@@ -11,7 +11,7 @@ export const languages: LanguageProps = [
   },
   {
     name: "Golang",
-    icon: "icons/golang.svg",
+    icon: "icons/go.svg",
   },
   {
     name: "Python",

@@ -12,12 +12,12 @@ export default function BackgroundSelector() {
   const { isOn, toggle, setOff } = useToggle();
   const { background, handleChange } = useGlobalContext();
 
-  const themeRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
-  useOnClickOutside(themeRef, setOff);
+  useOnClickOutside(bgRef, setOff);
 
   return (
-    <div className="bg-selector relative" onClick={toggle}>
+    <div ref={bgRef} className="bg-selector relative" onClick={toggle}>
       <p className="py-[5px] text-sm font-medium">Theme Selector</p>
       <div className="dropdown-title w-[62px]">
         <div
