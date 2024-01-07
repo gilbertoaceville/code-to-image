@@ -40,7 +40,7 @@ For ease of resizing the editor, the [re-resizable](https://www.npmjs.com/packag
     </Resizable>
 ```
 
-The header component of the editor is nested with 3 similar but distinct components, All selector components excluding the `PaddingSelector` share the same Dropown setup.
+The header component of the editor is nested with 3 similar but distinct components, All selector components excluding the `PaddingSelector` and `BackgroundSelector` share the same Dropown setup.
 ```bash
   page.tsx
 ```
@@ -97,6 +97,16 @@ The header component of the editor is nested with 3 similar but distinct compone
     );
   });
 ```
+
+Also, the code editor's title `Add-Title` on page mount has be made editable in such a way that the extension of the selected language remains while changes to the title are being made. This implementation was made in a separate custom hook attached uniquely to the `CodeEditor.tsx` file.
+```bash
+    // Extract the title without the extension
+    function handleChangeTitle(e: ChangeEvent<HTMLInputElement>) {
+    const newTitle = e.target.value.split(".")[0];
+    setTitle(newTitle);
+  }
+```
+
 ## Assets
 [!Screenshot](/public/screenshot-1.png)
 

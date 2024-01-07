@@ -21,20 +21,21 @@ const Dropdown = forwardRef(function Dropdown(
         {label} <ChevronDown />
       </div>
       {isOn && (
-        <div className="dropdown-menu relative top-[94px] w-[120px]">
+        <div className="dropdown-menu top-[94px] w-[120px]">
           {options.map((option, i) => {
             const name =
               type === EditorType.language
                 ? (option as LanguageType).name
                 : (option as string);
             return (
-              <button
-                key={i}
-                onClick={() => handleChange?.(type, option)}
-                className=" capitalize text-left hover:text-slate-50 transition-all duration-300 ease-in-out"
-              >
-                {name}
-              </button>
+              <div key={i}>
+                <button
+                  onClick={() => handleChange?.(type, option)}
+                  className="capitalize text-left hover:text-slate-50 transition-all duration-300 ease-in-out"
+                >
+                  {name}
+                </button>
+              </div>
             );
           })}
         </div>
