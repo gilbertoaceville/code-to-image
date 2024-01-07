@@ -17,19 +17,20 @@ import "ace-builds/src-noconflict/theme-cobalt";
 import "ace-builds/src-noconflict/theme-dracula";
 import "ace-builds/src-noconflict/theme-monokai";
 
+import { useGlobalContext } from "@/base/context/globalProvider";
+
 import styles from "./styles.module.scss";
-import { useEditor } from "@/base/hooks/useEditor";
 
 export default function CodeEditor() {
-  const { language } = useEditor();
+  const { language, theme } = useGlobalContext();
 
   return (
     <Resizable maxWidth={1000} minHeight={460} minWidth={500}>
       <AceEditor
         value="function() {return 'Hello'}"
         name="UNIQUE_ID_OF_DIV"
-        theme="cobalt"
-        mode={language.name}
+        theme={theme}
+        mode={language?.name.toLowerCase()}
         wrapEnabled
         fontSize={14}
         highlightActiveLine

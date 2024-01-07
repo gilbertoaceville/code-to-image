@@ -4,13 +4,13 @@ import { ChevronDown } from "lucide-react";
 import { useRef } from "react";
 
 import { linearBackgrounds } from "@/base/config/config";
-import { EditorType, useEditor } from "@/base/hooks/useEditor";
 import useToggle from "@/base/hooks/useToggle";
 import { useOnClickOutside } from "@/base/hooks/useOnClickOutside";
+import { EditorType, useGlobalContext } from "@/base/context/globalProvider";
 
 export default function BackgroundSelector() {
   const { isOn, toggle, setOff } = useToggle();
-  const { background, handleChange } = useEditor();
+  const { background, handleChange } = useGlobalContext();
 
   const themeRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +32,7 @@ export default function BackgroundSelector() {
             return (
               <div
                 key={i}
-                onClick={() => handleChange(EditorType.background, background)}
+                onClick={() => handleChange?.(EditorType.background, background)}
                 className="w-[20px] h-[20px] rounded-full cursor-pointer"
                 style={{ background }}
               ></div>

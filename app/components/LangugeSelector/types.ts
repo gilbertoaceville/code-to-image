@@ -1,3 +1,3 @@
 export type LanguageProps = LanguageType[];
 
-export type LanguageType = { name: string; icon: string };
+export type LanguageType = { name: string; icon: string; };

@@ -4,13 +4,15 @@ import { ChevronDown } from "lucide-react";
 import { useRef } from "react";
 
 import { themes } from "@/base/config/config";
-import { EditorType, useEditor } from "@/base/hooks/useEditor";
 import useToggle from "@/base/hooks/useToggle";
 import { useOnClickOutside } from "@/base/hooks/useOnClickOutside";
+import { EditorType, useGlobalContext } from "@/base/context/globalProvider";
 
 export default function ThemeSelector() {
+  
   const { isOn, toggle, setOff } = useToggle();
-  const { theme, handleChange } = useEditor();
+  const { theme, handleChange } = useGlobalContext();
+  console.log(theme);
 
   const themeRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +30,7 @@ export default function ThemeSelector() {
             return (
               <button
                 key={i}
-                onClick={() => handleChange(EditorType.theme, theme)}
+                onClick={() => handleChange?.(EditorType.theme, theme)}
                 className=" capitalize text-left hover:text-slate-50 transition-all duration-300 ease-in-out"
               >
                 {theme}
