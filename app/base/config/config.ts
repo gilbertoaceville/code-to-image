@@ -29,6 +29,8 @@ export const languages: LanguageProps = [
 
 export const themes: string[] = ["cobalt", "monokai", "twilight", "dracula"];
 
+export const paddings: string[] = ["1rem", "2rem", "3rem", "4rem"];
+
 export const linearBackgrounds: string[] = [
   "linear-gradient(354deg,#ff75b5,#ffb86c)",
   "linear-gradient(140deg, rgb(255, 207, 115), rgb(255, 122, 47))",
