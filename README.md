@@ -107,6 +107,8 @@ Also, the code editor's title `Add-Title` on page mount has be made editable in 
   }
 ```
 
+Also, using the [html2canvas](https://www.npmjs.com/package/html2canvas), it's been made possible to download the editor as a png file.
+
 ## Assets
 [!Screenshot](/public/screenshot-1.png)
 
