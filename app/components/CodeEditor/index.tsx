@@ -27,8 +27,15 @@ import { getLangExtension } from "@/base/utils/getLangExtension";
 
 export default function CodeEditor() {
   const { language, theme, padding, background } = useGlobalContext();
-  const { codeValue, resHeight, resWidth, title, handleCodeValueChange, handleChangeTitle, handleResize } =
-    useCodeEditor();
+  const {
+    codeValue,
+    resHeight,
+    resWidth,
+    title,
+    handleCodeValueChange,
+    handleChangeTitle,
+    handleResize,
+  } = useCodeEditor();
   const extension = getLangExtension(language?.name);
 
   return (
@@ -49,10 +56,30 @@ export default function CodeEditor() {
       <div className="code-container" style={{ padding }}>
         <div
           className={clsx(
-            styles.codeTitle,
-            "h-[52px] px-4 flex items-center justify-between bg-foreground bg-opacity-80"
+            styles.handleTop,
+            "handle handle-top absolute left-1/2 translate-x-[-50%] top-[-4px] w-2 h-2 rounded-full bg-tertiary hover:bg-slate-50"
           )}
-        >
+        />
+        <div
+          className={clsx(
+            styles.handleBottom,
+            "handle absolute left-1/2 bottom-[-4px] w-2 h-2 rounded-full bg-tertiary hover:bg-slate-50"
+          )}
+        />
+        <div
+          className={clsx(
+            styles.handleLeft,
+            "handle absolute left-[-4px] top-1/2 w-2 h-2 rounded-full  bg-tertiary hover:bg-slate-50 "
+          )}
+        />
+        <div
+          className={clsx(
+            styles.handleRight,
+            "handle absolute right-[-4px] top-1/2 w-2 h-2 rounded-full bg-tertiary hover:bg-slate-50 "
+          )}
+        />
+
+        <div className="code-title h-[52px] px-4 flex items-center justify-between bg-foreground bg-opacity-80">
           <div className="dots flex items-center gap-1">
             <div className="w-3 h-3 rounded-full bg-[#ff5656]"></div>
             <div className="w-3 h-3 rounded-full bg-[#ffbc6a] "></div>

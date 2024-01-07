@@ -12,7 +12,6 @@ export default function ThemeSelector() {
   
   const { isOn, toggle, setOff } = useToggle();
   const { theme, handleChange } = useGlobalContext();
-  console.log(theme);
 
   const themeRef = useRef<HTMLDivElement>(null);
 

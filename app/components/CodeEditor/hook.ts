@@ -4,7 +4,7 @@ import { ChangeEvent, SetStateAction, useEffect, useState } from "react";
 export function useCodeEditor() {
   const [resWidth, setResWidth] = useState(1000);
   const [resHeight, setResHeight] = useState<number | null>(500);
-  const [title, setTitle] = useState("Code");
+  const [title, setTitle] = useState("Add-Untitled");
   const [codeValue, setCodeValue] = useState<string>(defaultCode);
 
   function handleCodeValueChange(newCode: string) {
