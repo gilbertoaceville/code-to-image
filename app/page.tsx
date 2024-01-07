@@ -15,7 +15,7 @@ import Footer from "@/components/ui/Footer";
 export default function Home() {
   const editorRef = useRef<HTMLDivElement>(null);
 
-  async function exportPng() {
+  async function downloadImage() {
     const element = editorRef.current;
 
     if (element) {
@@ -68,10 +68,10 @@ export default function Home() {
             className="flex items-center gap-3 py-2 px-3 bg-violet-400 rounded-md text-sm text-violet-400 
               font-medium bg-opacity-10 hover:bg-opacity-80 hover:text-slate-50 ease-in-out transition-all 
               duration-300"
-            onClick={exportPng}
+            onClick={downloadImage}
           >
             <Download />
-            Export PNG
+            Download File
           </button>
         </div>
       </header>
