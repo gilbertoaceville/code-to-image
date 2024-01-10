@@ -1,15 +1,9 @@
-import { defaultCode } from "@/base/config/config";
-import { ChangeEvent, SetStateAction, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 export function useCodeEditor() {
   const [resWidth, setResWidth] = useState(1000);
   const [resHeight, setResHeight] = useState<number | null>(500);
   const [title, setTitle] = useState("Add-Title");
-  const [codeValue, setCodeValue] = useState<string>(defaultCode);
-
-  function handleCodeValueChange(newCode: string) {
-    setCodeValue(newCode);
-  }
 
   function handleChangeTitle(e: ChangeEvent<HTMLInputElement>) {
     // Pull out the title without the extension
@@ -39,11 +33,9 @@ export function useCodeEditor() {
   }, []);
 
   return {
-    codeValue,
     resHeight,
     resWidth,
     title,
-    handleCodeValueChange,
     handleResize,
     handleChangeTitle,
   };

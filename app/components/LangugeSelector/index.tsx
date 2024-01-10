@@ -7,7 +7,7 @@ import { EditorType, useGlobalContext } from "@/base/context/globalProvider";
 import Dropdown from "../ui/Dropdown";
 
 export default function LanguageSelector() {
-  const { language, handleChange } = useGlobalContext();
+  const { language, handleChange, } = useGlobalContext();
 
   const langRef = useRef<HTMLDivElement>(null);
 
