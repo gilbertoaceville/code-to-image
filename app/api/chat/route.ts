@@ -1,4 +1,3 @@
-import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
@@ -8,9 +7,9 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
 });
 
-export async function POST(req: NextApiRequest) {
+export async function POST(req: Request) {
   try {
-    const { messages }: { messages: Message[] } = await req.body;
+    const { messages }: { messages: Message[] } = await (req.body as any);
 
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
