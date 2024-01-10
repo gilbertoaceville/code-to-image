@@ -26,16 +26,16 @@ import { useCodeEditor } from "./hook";
 import { getLangExtension } from "@/base/utils/getLangExtension";
 
 export default function CodeEditor() {
-  const { language, theme, padding, background } = useGlobalContext();
   const {
+    language,
+    theme,
+    padding,
+    background,
     codeValue,
-    resHeight,
-    resWidth,
-    title,
     handleCodeValueChange,
-    handleChangeTitle,
-    handleResize,
-  } = useCodeEditor();
+  } = useGlobalContext();
+  const { resHeight, resWidth, title, handleChangeTitle, handleResize } =
+    useCodeEditor();
   const extension = getLangExtension(language?.name);
 
   return (
