@@ -8,7 +8,7 @@ import {
   themes,
 } from "@/base/config/config";
 import { LanguageType } from "@/components/LangugeSelector/types";
-import { convertCode, getConvertedCode } from "../utils/convertCode";
+import { getConvertedCode } from "../utils/convertCode";
 
 export enum EditorType {
   language = "LANGUAGE",
@@ -53,8 +53,8 @@ export default function GlobalProvider({
   async function handleLanguageChange(newLanguage: LanguageType) {
     setLanguage(newLanguage);
 
-    const convertedCode = await convertCode(codeValue, language?.name);
-    console.log({ convertedCode });
+    // const convertedCode = await getConvertedCode(codeValue, language?.name);
+    // console.log({ convertedCode });
   }
 
   function handleChange(type: EditorType, newContent: LanguageType | string) {
